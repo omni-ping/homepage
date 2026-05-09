@@ -36,7 +36,6 @@
         place-items: center;
         min-height: 100vh;
         min-height: 100dvh;
-        overflow: hidden;
         -webkit-font-smoothing: antialiased;
       }
 
@@ -50,7 +49,7 @@
         font-size: clamp(3rem, 14vw, 10rem);
         line-height: 1;
         letter-spacing: -0.02em;
-        margin: 0;
+        margin: 0 0 3rem;
         font-feature-settings: "liga", "dlig";
       }
 
@@ -62,11 +61,58 @@
         margin-left: 0.25em;
         opacity: 0.72;
       }
+
+      .products {
+        display: flex;
+        gap: clamp(2rem, 6vw, 4rem);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .product {
+        text-decoration: none;
+        color: var(--ink);
+        text-align: center;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+
+      .product:hover {
+        opacity: 1;
+      }
+
+      .product-name {
+        display: block;
+        font-size: clamp(1.25rem, 4vw, 2rem);
+        letter-spacing: -0.01em;
+      }
+
+      .product-tagline {
+        display: block;
+        font-style: italic;
+        font-size: clamp(0.75rem, 2vw, 0.95rem);
+        opacity: 0.7;
+        margin-top: 0.25rem;
+      }
     </style>
   </head>
   <body>
     <main>
       <h1>omniping<em>llc</em></h1>
+      <nav class="products">
+        <a class="product" href="/loopback">
+          <span class="product-name">loopback</span>
+          <span class="product-tagline">ai driven productivity</span>
+        </a>
+        <a class="product" href="/warrooms">
+          <span class="product-name">warrooms</span>
+          <span class="product-tagline">right people, right context</span>
+        </a>
+        <a class="product" href="/theway">
+          <span class="product-name">theway</span>
+          <span class="product-tagline">for obstacles</span>
+        </a>
+      </nav>
     </main>
   </body>
 </html>
