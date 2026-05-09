@@ -25,60 +25,122 @@
       body {
         margin: 0;
         padding: 0;
-        height: 100%;
       }
 
       body {
         background: var(--paper);
         color: var(--ink);
         font-family: "Instrument Serif", Georgia, serif;
-        display: grid;
-        place-items: center;
         min-height: 100vh;
         min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 2rem 5rem;
         -webkit-font-smoothing: antialiased;
       }
 
       main {
-        text-align: center;
-        padding: 2rem;
+        width: 100%;
+        max-width: 560px;
       }
 
       h1 {
         font-weight: 400;
-        font-size: clamp(3rem, 14vw, 10rem);
+        font-size: clamp(2.5rem, 10vw, 5rem);
         line-height: 1;
         letter-spacing: -0.02em;
-        margin: 0 0 1rem;
+        margin: 0 0 0.4rem;
         font-feature-settings: "liga", "dlig";
       }
 
-      p {
+      .tagline {
         font-style: italic;
-        font-size: clamp(1rem, 3vw, 1.5rem);
-        opacity: 0.7;
-        margin: 0 0 3rem;
+        font-size: clamp(1rem, 3vw, 1.3rem);
+        opacity: 0.6;
+        margin: 0 0 2.5rem;
       }
 
-      a {
+      .body {
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+        line-height: 1.65;
+      }
+
+      .body p {
+        margin: 0 0 1.2rem;
+        opacity: 0.85;
+      }
+
+      .body ul {
+        margin: 1.5rem 0 1.5rem;
+        padding: 0;
+        list-style: none;
+      }
+
+      .body ul li {
+        padding: 0.3rem 0;
+        opacity: 0.8;
+      }
+
+      .body ul li::before {
+        content: "— ";
+        opacity: 0.4;
+      }
+
+      .soon {
+        font-style: italic;
+        opacity: 0.5 !important;
+        font-size: 0.95em;
+      }
+
+      .back {
+        display: inline-block;
+        margin-top: 3rem;
         color: var(--ink);
         font-style: italic;
         font-size: 0.9rem;
-        opacity: 0.45;
+        opacity: 0.4;
         text-decoration: none;
         transition: opacity 0.2s;
       }
 
-      a:hover {
-        opacity: 0.9;
+      .back:hover {
+        opacity: 0.85;
       }
     </style>
   </head>
   <body>
     <main>
       <h1>loopback</h1>
-      <p>ai driven productivity</p>
-      <a href="/">by omniping</a>
+      <p class="tagline">Talk to it. It remembers.</p>
+
+      <div class="body">
+        <p>
+          Prism is the AI agent at the center of the app. Tell it what's on
+          your mind, by text or voice, and it builds threads, sets reminders,
+          reads your calendar, and searches across everything you've saved. Voice
+          goes in through Whisper. Everything syncs through PowerSync and
+          Supabase, offline-first, so it works on the subway.
+        </p>
+        <p>
+          A thread is a topic, a task, anything you're tracking. Pin it,
+          snooze it, complete it. Or just ask Prism.
+        </p>
+
+        <ul>
+          <li>Voice capture via Whisper</li>
+          <li>Google Calendar + Gmail: Prism knows what's on your plate</li>
+          <li>Push notifications, timezone-aware scheduling</li>
+          <li>Offline-first — works without signal, syncs when you're back</li>
+          <li>Runs Claude Sonnet 4.6</li>
+        </ul>
+
+        <p class="soon">
+          Coming soon: scheduled prompts. "Every Monday, review my overdue threads."
+        </p>
+      </div>
+
+      <a class="back" href="/">by omniping</a>
     </main>
   </body>
 </html>
