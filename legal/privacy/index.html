@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Loopback</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav>
+    <a class="home" href="/">omniping</a>
+    <a href="/legal/privacy" class="active">Privacy</a>
+    <a href="/legal/terms">Terms</a>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Loopback by omniping &middot; Effective March 28, 2026</p>
+    </header>
+
+    <p class="lede">Loopback is a task app where each item is a living conversation. This policy explains what data we collect, how we use it, and who we share it with. The short version: your data is yours, we send it to third parties only to make the app work, and none of it is used to train AI models.</p>
+
+    <section>
+      <h2>What we collect</h2>
+
+      <h3>Account information</h3>
+      <p>When you sign in with Google or Apple, we receive your name and email address. We use this to create your account and identify your data. We do not access your Google or Apple password.</p>
+
+      <h3>Content you create</h3>
+      <p>Threads, notes, labels, reminders, and messages you create in Loopback are stored to provide the service. This includes text, images, and other media you attach to threads.</p>
+
+      <h3>Voice recordings</h3>
+      <p>If you use voice input, your audio is recorded temporarily on your device, sent to OpenAI's Whisper API for transcription, and then deleted from our servers. We do not store your audio recordings. The resulting text is stored as a regular message.</p>
+
+      <h3>Connected accounts</h3>
+      <p>If you connect Google Calendar or Gmail, we access those services using OAuth tokens stored encrypted on your device. We read and write calendar events and emails only when you or Prism (our AI assistant) explicitly perform an action. We do not continuously monitor or scrape your Google data.</p>
+
+      <h3>Guest mode</h3>
+      <p>If you use Loopback without signing in, your data stays on your device. Nothing is sent to our servers or any third party. AI features are not available in guest mode.</p>
+    </section>
+
+    <section>
+      <h2>How we use your data</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Purpose</th>
+            <th>Data used</th>
+            <th>Third party</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>App functionality</td>
+            <td>All content you create</td>
+            <td>Supabase (database, auth, storage)</td>
+          </tr>
+          <tr>
+            <td>Sync across devices</td>
+            <td>Threads, messages, reminders, media metadata</td>
+            <td>PowerSync</td>
+          </tr>
+          <tr>
+            <td>AI assistant (Prism)</td>
+            <td>Thread titles, notes, labels, messages, reminders</td>
+            <td>Anthropic (Claude)</td>
+          </tr>
+          <tr>
+            <td>Voice transcription</td>
+            <td>Audio recordings (temporary)</td>
+            <td>OpenAI (Whisper)</td>
+          </tr>
+          <tr>
+            <td>Calendar &amp; email actions</td>
+            <td>OAuth tokens, event/email content</td>
+            <td>Google APIs</td>
+          </tr>
+          <tr>
+            <td>Push notifications</td>
+            <td>Device push token</td>
+            <td>Expo, Apple Push Notification service</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>AI and your data</h2>
+      <p>Prism, the AI assistant in Loopback, is powered by <strong>Anthropic's Claude</strong>. When you use Prism, the following data is sent to Anthropic:</p>
+      <ul>
+        <li>Thread titles, notes, and labels</li>
+        <li>Messages in the conversation</li>
+        <li>Reminder details and media metadata (for thread-scoped chats)</li>
+      </ul>
+      <p>Anthropic does <strong>not</strong> use your data to train AI models. Your conversations are processed to generate responses and are subject to <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</p>
+      <p>You must grant consent before Prism is activated. You can revoke consent at any time in Settings, which immediately stops all data from being sent to Anthropic.</p>
+    </section>
+
+    <section>
+      <h2>Data storage and security</h2>
+      <p>Your data is stored with row-level security policies ensuring only you can access your data. Authentication tokens are stored in your device's secure enclave via iOS Keychain. Data syncs between your device and our servers over encrypted connections (TLS).</p>
+    </section>
+
+    <section>
+      <h2>Your choices</h2>
+      <ul>
+        <li><strong>Revoke AI consent</strong> — turn off Prism data sharing in Settings at any time. Core app functionality continues to work.</li>
+        <li><strong>Disconnect Google accounts</strong> — remove Calendar and Gmail access in Settings. OAuth tokens are deleted from your device.</li>
+        <li><strong>Delete your account</strong> — contact us to request full deletion of your account and all associated data.</li>
+        <li><strong>Use guest mode</strong> — use the app without an account. Your data stays on your device only.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Children's privacy</h2>
+      <p>Loopback is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with data, please contact us and we will delete it.</p>
+    </section>
+
+    <section>
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy from time to time. We will notify you of material changes through the app or by updating the effective date above. Continued use of Loopback after changes constitutes acceptance.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about this policy? Reach us at <a href="mailto:admin@omniping.dev">admin@omniping.dev</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 omniping llc</p>
+  </footer>
+</body>
+</html>
