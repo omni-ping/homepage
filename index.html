@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>omniping &mdash; sharp tools for sharp people</title>
-    <meta name="description" content="omniping builds sharp tools &mdash; loopback, warrooms, theway, upublish" />
+    <meta name="description" content="omniping builds sharp tools &mdash; loopback, theway, upublish" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,10 +22,8 @@
         --text-muted: #737373;
         --text-faint: #525252;
         --accent-loopback: #818cf8;
-        --accent-warrooms: #fbbf24;
         --accent-theway: #34d399;
         --accent-loopback-dim: #818cf830;
-        --accent-warrooms-dim: #fbbf2430;
         --accent-theway-dim: #34d39930;
         --accent-upublish: #f472b6;
         --accent-upublish-dim: #f472b630;
@@ -105,7 +103,7 @@
 
       .products {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1px;
         width: 100%;
         background: var(--border);
@@ -169,13 +167,6 @@
       }
       .product--loopback .product-name {
         color: var(--accent-loopback);
-      }
-
-      .product--warrooms:hover .product-arrow {
-        color: var(--accent-warrooms);
-      }
-      .product--warrooms .product-name {
-        color: var(--accent-warrooms);
       }
 
       .product--theway:hover .product-arrow {
@@ -254,24 +245,17 @@
           </div>
           <span class="product-arrow">&rarr;</span>
         </a>
-        <a class="product product--warrooms" href="/warrooms">
-          <div class="product-top">
-            <span class="product-name">warrooms</span>
-            <span class="product-tagline">right people, right context</span>
-          </div>
-          <span class="product-arrow">&rarr;</span>
-        </a>
         <a class="product product--theway" href="/theway">
           <div class="product-top">
             <span class="product-name">theway</span>
-            <span class="product-tagline">for obstacles</span>
+            <span class="product-tagline">wisdom on your lock screen</span>
           </div>
           <span class="product-arrow">&rarr;</span>
         </a>
         <a class="product product--upublish" href="/upublish">
           <div class="product-top">
             <span class="product-name">upublish</span>
-            <span class="product-tagline">collaborate with ai</span>
+            <span class="product-tagline">publish with claude</span>
           </div>
           <span class="product-arrow">&rarr;</span>
         </a>
