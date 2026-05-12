@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy — Loopback</title>
+  <title>Privacy Policy &mdash; Loopback</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <main>
     <header>
       <h1>Privacy Policy</h1>
-      <p class="meta">Loopback by omniping &middot; Effective March 28, 2026</p>
+      <p class="meta">Loopback by omniping &middot; Effective May 12, 2026</p>
     </header>
 
     <p class="lede">Loopback is a task app where each item is a living conversation. This policy explains what data we collect, how we use it, and who we share it with. The short version: your data is yours, we send it to third parties only to make the app work, and none of it is used to train AI models.</p>
@@ -31,10 +31,22 @@
       <p>Threads, notes, labels, reminders, and messages you create in Loopback are stored to provide the service. This includes text, images, and other media you attach to threads.</p>
 
       <h3>Voice recordings</h3>
-      <p>If you use voice input, your audio is recorded temporarily on your device, sent to OpenAI's Whisper API for transcription, and then deleted from our servers. We do not store your audio recordings. The resulting text is stored as a regular message.</p>
+      <p>If you use voice input, your audio is recorded temporarily on your device, sent to OpenAI&rsquo;s Whisper API for transcription, and then deleted from our servers. We do not store your audio recordings. The resulting text is stored as a regular message. Per OpenAI&rsquo;s API data usage policy, audio sent to the Whisper API is not used to train models and is retained for up to 30 days for abuse monitoring before deletion.</p>
 
       <h3>Connected accounts</h3>
       <p>If you connect Google Calendar or Gmail, we access those services using OAuth tokens stored encrypted on your device. We read and write calendar events and emails only when you or Prism (our AI assistant) explicitly perform an action. We do not continuously monitor or scrape your Google data.</p>
+
+      <h3>Device permissions</h3>
+      <p>Loopback may request the following device permissions, each of which requires your explicit consent:</p>
+      <ul>
+        <li><strong>Microphone</strong> &mdash; used for voice input to Prism. Audio is transcribed and immediately discarded.</li>
+        <li><strong>Camera and photo library</strong> &mdash; used to attach images and media to threads. Media is stored with your thread data.</li>
+        <li><strong>Notifications</strong> &mdash; used to deliver reminders and alerts you configure.</li>
+      </ul>
+      <p>We do not access location data. If a future update requires additional permissions, we will update this policy and request your consent.</p>
+
+      <h3>Push notifications</h3>
+      <p>If you enable push notifications, we store your device&rsquo;s push token (provided by Apple Push Notification service via Expo). This token is a technical identifier used solely to deliver notifications to your device. It is not linked to your personal identity and cannot be used to identify you outside the notification delivery system.</p>
 
       <h3>Guest mode</h3>
       <p>If you use Loopback without signing in, your data stays on your device. Nothing is sent to our servers or any third party. AI features are not available in guest mode.</p>
@@ -65,12 +77,12 @@
           <tr>
             <td>AI assistant (Prism)</td>
             <td>Thread titles, notes, labels, messages, reminders</td>
-            <td>Anthropic (Claude)</td>
+            <td>Anthropic (Claude API)</td>
           </tr>
           <tr>
             <td>Voice transcription</td>
             <td>Audio recordings (temporary)</td>
-            <td>OpenAI (Whisper)</td>
+            <td>OpenAI (Whisper API)</td>
           </tr>
           <tr>
             <td>Calendar &amp; email actions</td>
@@ -87,34 +99,107 @@
     </section>
 
     <section>
+      <h2>Subprocessors</h2>
+      <p>We use the following third-party services to operate Loopback. Each processes your data only as necessary to provide its specific function:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Subprocessor</th>
+            <th>Purpose</th>
+            <th>Data processed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supabase</td>
+            <td>Database, authentication, file storage</td>
+            <td>Account info, threads, messages, media</td>
+          </tr>
+          <tr>
+            <td>PowerSync</td>
+            <td>Real-time sync between devices</td>
+            <td>Thread and message data</td>
+          </tr>
+          <tr>
+            <td>Anthropic</td>
+            <td>AI assistant (Prism) via the Claude API</td>
+            <td>Thread context and conversation messages</td>
+          </tr>
+          <tr>
+            <td>OpenAI</td>
+            <td>Voice transcription via the Whisper API</td>
+            <td>Audio recordings (temporary, deleted within 30 days)</td>
+          </tr>
+          <tr>
+            <td>Google</td>
+            <td>Calendar and email integration</td>
+            <td>OAuth tokens, event and email content</td>
+          </tr>
+          <tr>
+            <td>Expo / Apple</td>
+            <td>Push notification delivery</td>
+            <td>Device push token</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
       <h2>AI and your data</h2>
-      <p>Prism, the AI assistant in Loopback, is powered by <strong>Anthropic's Claude</strong>. When you use Prism, the following data is sent to Anthropic:</p>
+      <p>Prism, the AI assistant in Loopback, is powered by <strong>Anthropic&rsquo;s Claude API</strong> (not the Claude.ai consumer product). When you use Prism, the following data is sent to Anthropic&rsquo;s API:</p>
       <ul>
         <li>Thread titles, notes, and labels</li>
         <li>Messages in the conversation</li>
         <li>Reminder details and media metadata (for thread-scoped chats)</li>
       </ul>
-      <p>Anthropic does <strong>not</strong> use your data to train AI models. Your conversations are processed to generate responses and are subject to <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</p>
+      <p>Under Anthropic&rsquo;s API terms, your data is <strong>not</strong> used to train AI models. API inputs and outputs are retained for up to 30 days for trust and safety purposes, then deleted. For full details, see <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic&rsquo;s Privacy Policy</a> and <a href="https://www.anthropic.com/policies/terms" target="_blank" rel="noopener">API Terms of Service</a>.</p>
       <p>You must grant consent before Prism is activated. You can revoke consent at any time in Settings, which immediately stops all data from being sent to Anthropic.</p>
     </section>
 
     <section>
       <h2>Data storage and security</h2>
-      <p>Your data is stored with row-level security policies ensuring only you can access your data. Authentication tokens are stored in your device's secure enclave via iOS Keychain. Data syncs between your device and our servers over encrypted connections (TLS).</p>
+      <p>Your data is stored with row-level security policies ensuring only you can access your data. Authentication tokens are stored in your device&rsquo;s secure enclave via iOS Keychain. Data syncs between your device and our servers over encrypted connections (TLS).</p>
+    </section>
+
+    <section>
+      <h2>Data retention</h2>
+      <p>We retain your data for as long as your account is active. Upon account deletion, we permanently remove all your data from our servers within 30 days, except where retention is required by law or to resolve disputes. Voice recordings are deleted immediately after transcription and are never stored on our servers. AI conversation data sent to Anthropic is retained by them for up to 30 days per their API terms, then deleted.</p>
     </section>
 
     <section>
       <h2>Your choices</h2>
       <ul>
-        <li><strong>Revoke AI consent</strong> — turn off Prism data sharing in Settings at any time. Core app functionality continues to work.</li>
-        <li><strong>Disconnect Google accounts</strong> — remove Calendar and Gmail access in Settings. OAuth tokens are deleted from your device.</li>
-        <li><strong>Delete your account</strong> — contact us to request full deletion of your account and all associated data.</li>
-        <li><strong>Use guest mode</strong> — use the app without an account. Your data stays on your device only.</li>
+        <li><strong>Delete your account</strong> &mdash; in Settings, tap Delete Account. This permanently removes your account and all associated data from our servers within 30 days.</li>
+        <li><strong>Revoke AI consent</strong> &mdash; turn off Prism data sharing in Settings at any time. Core app functionality continues to work.</li>
+        <li><strong>Disconnect Google accounts</strong> &mdash; remove Calendar and Gmail access in Settings. OAuth tokens are deleted from your device.</li>
+        <li><strong>Use guest mode</strong> &mdash; use the app without an account. Your data stays on your device only.</li>
       </ul>
     </section>
 
     <section>
-      <h2>Children's privacy</h2>
+      <h2>California privacy rights (CCPA)</h2>
+      <p>If you are a California resident, you have the following rights under the California Consumer Privacy Act:</p>
+      <ul>
+        <li><strong>Right to know</strong> &mdash; you can request what personal information we collect, use, and disclose.</li>
+        <li><strong>Right to delete</strong> &mdash; you can request deletion of your personal information.</li>
+        <li><strong>Right to correct</strong> &mdash; you can request correction of inaccurate personal information.</li>
+        <li><strong>Right to opt out</strong> &mdash; we do not sell or share your personal information for cross-context behavioral advertising. There is nothing to opt out of.</li>
+      </ul>
+      <p>To exercise these rights, contact us at <a href="mailto:admin@omniping.dev">admin@omniping.dev</a> or use the in-app account deletion feature.</p>
+    </section>
+
+    <section>
+      <h2>International users (GDPR)</h2>
+      <p>If you are located in the European Economic Area, United Kingdom, or Switzerland:</p>
+      <ul>
+        <li><strong>Legal basis</strong> &mdash; we process your data based on your consent (AI features, notifications) and contract performance (providing the service you signed up for).</li>
+        <li><strong>Data transfers</strong> &mdash; your data may be transferred to and processed in the United States, where our servers and subprocessors are located. We rely on standard contractual clauses where applicable.</li>
+        <li><strong>Your rights</strong> &mdash; you have the right to access, rectify, erase, port, and object to processing of your personal data. To exercise these rights, contact us at <a href="mailto:admin@omniping.dev">admin@omniping.dev</a>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Children&rsquo;s privacy</h2>
       <p>Loopback is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with data, please contact us and we will delete it.</p>
     </section>
 
