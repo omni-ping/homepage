@@ -3,34 +3,40 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>loopback</title>
-    <meta name="description" content="loopback by omniping — ai driven productivity" />
+    <title>loopback &mdash; ai driven productivity</title>
+    <meta name="description" content="loopback by omniping &mdash; ai driven productivity" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --paper: #ece6d8;
-        --ink: #1b1714;
+        --bg: #09090b;
+        --bg-card: #141414;
+        --border: #262626;
+        --text: #ededed;
+        --text-muted: #737373;
+        --text-faint: #525252;
+        --accent: #818cf8;
+        --accent-dim: #818cf820;
+        --font-display: 'Space Mono', monospace;
+        --font-body: 'Space Grotesk', sans-serif;
       }
 
       * {
         box-sizing: border-box;
-      }
-
-      html,
-      body {
         margin: 0;
         padding: 0;
       }
 
       body {
-        background: var(--paper);
-        color: var(--ink);
-        font-family: "Instrument Serif", Georgia, serif;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.5;
         min-height: 100vh;
         min-height: 100dvh;
         display: flex;
@@ -42,108 +48,114 @@
 
       main {
         width: 100%;
-        max-width: 560px;
+        max-width: 600px;
+      }
+
+      .back {
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        color: var(--text-faint);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        transition: color 0.2s;
+        display: inline-block;
+        margin-bottom: 2.5rem;
+      }
+
+      .back:hover {
+        color: var(--text-muted);
       }
 
       h1 {
-        font-weight: 400;
-        font-size: clamp(2.5rem, 10vw, 5rem);
-        line-height: 1;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(2.3rem, 8vw, 3.125rem);
+        line-height: 1.1;
         letter-spacing: -0.02em;
-        margin: 0 0 0.4rem;
-        font-feature-settings: "liga", "dlig";
-      }
-
-      h1 em {
-        font-style: italic;
-        font-size: 0.35em;
-        letter-spacing: 0.04em;
-        vertical-align: 0.5em;
-        margin-left: 0.4em;
-        opacity: 0.45;
-      }
-
-      h1 em a {
-        color: var(--ink);
-        text-decoration: none;
-        transition: opacity 0.2s;
-      }
-
-      h1 em a:hover {
-        opacity: 1;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
       }
 
       .tagline {
-        font-style: italic;
-        font-size: clamp(1rem, 3vw, 1.3rem);
-        opacity: 0.6;
-        margin: 0 0 2.5rem;
-      }
-
-      .body {
-        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-        line-height: 1.65;
+        font-family: var(--font-display);
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
       }
 
       .body p {
-        margin: 0 0 1.2rem;
-        opacity: 0.85;
+        color: var(--text-muted);
+        margin-bottom: 1.25rem;
+        line-height: 1.65;
       }
 
       .body ul {
-        margin: 1.5rem 0 1.5rem;
-        padding: 0;
         list-style: none;
+        margin: 1.5rem 0;
+        padding: 1.5rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
       }
 
       .body ul li {
-        padding: 0.3rem 0;
-        opacity: 0.8;
+        padding: 0.4rem 0;
+        color: var(--text);
+        font-size: 0.9375rem;
       }
 
       .body ul li::before {
-        content: "— ";
-        opacity: 0.4;
+        content: "\2192  ";
+        color: var(--accent);
+        font-family: var(--font-display);
       }
 
       .soon {
+        font-size: 0.875rem;
+        color: var(--text-faint);
         font-style: italic;
-        opacity: 0.5 !important;
-        font-size: 0.95em;
+        border-left: 2px solid var(--border);
+        padding-left: 1rem;
+        margin-top: 2rem;
       }
 
+      @media (max-width: 640px) {
+        body {
+          padding: 2rem 1.5rem 3rem;
+        }
+      }
     </style>
   </head>
   <body>
     <main>
-      <h1>loopback<em><a href="/">by omniping</a></em></h1>
+      <a class="back" href="/">&larr; omniping</a>
+      <h1>loopback</h1>
       <p class="tagline">ai driven productivity</p>
 
       <div class="body">
         <p>
-          Prism is the AI agent at the center of the app. Tell it what's on
+          Prism is the AI agent at the center of the app. Tell it what&rsquo;s on
           your mind, by text or voice, and it builds threads, sets reminders,
-          reads your calendar, and searches across everything you've saved.
+          reads your calendar, and searches across everything you&rsquo;ve saved.
           Offline-first, so it works on the subway.
         </p>
         <p>
-          A thread is a topic, a task, anything you're tracking. Pin it,
+          A thread is a topic, a task, anything you&rsquo;re tracking. Pin it,
           snooze it, complete it. Or just ask Prism.
         </p>
 
         <ul>
           <li>Intelligent AI voice capture</li>
-          <li>Google Calendar + Gmail: Prism knows what's on your plate</li>
+          <li>Google Calendar + Gmail: Prism knows what&rsquo;s on your plate</li>
           <li>Push notifications, timezone-aware scheduling</li>
-          <li>Offline-first — works without signal</li>
+          <li>Offline-first &mdash; works without signal</li>
           <li>Powered by Claude</li>
         </ul>
 
         <p class="soon">
-          Coming soon: scheduled prompts. "Every Monday, review my overdue threads."
+          Coming soon: scheduled prompts. &ldquo;Every Monday, review my overdue threads.&rdquo;
         </p>
       </div>
-
     </main>
   </body>
 </html>

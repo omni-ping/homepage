@@ -3,74 +3,75 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>warrooms</title>
-    <meta name="description" content="warrooms by omniping — right people, right context" />
+    <title>warrooms &mdash; right people, right context</title>
+    <meta name="description" content="warrooms by omniping &mdash; right people, right context" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --paper: #ece6d8;
-        --ink: #1b1714;
+        --bg: #09090b;
+        --text: #ededed;
+        --text-muted: #737373;
+        --text-faint: #525252;
+        --accent: #fbbf24;
+        --font-display: 'Space Mono', monospace;
+        --font-body: 'Space Grotesk', sans-serif;
       }
 
       * {
         box-sizing: border-box;
-      }
-
-      html,
-      body {
         margin: 0;
         padding: 0;
-        height: 100%;
       }
 
       body {
-        background: var(--paper);
-        color: var(--ink);
-        font-family: "Instrument Serif", Georgia, serif;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-body);
         display: grid;
         place-items: center;
         min-height: 100vh;
         min-height: 100dvh;
+        padding: 2rem;
         -webkit-font-smoothing: antialiased;
       }
 
       main {
         text-align: center;
-        padding: 2rem;
       }
 
       h1 {
-        font-weight: 400;
-        font-size: clamp(3rem, 14vw, 10rem);
-        line-height: 1;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(2.3rem, 10vw, 4.1875rem);
+        line-height: 1.1;
         letter-spacing: -0.02em;
-        margin: 0 0 1rem;
-        font-feature-settings: "liga", "dlig";
+        color: var(--accent);
+        margin-bottom: 0.75rem;
       }
 
       p {
-        font-style: italic;
-        font-size: clamp(1rem, 3vw, 1.5rem);
-        opacity: 0.7;
-        margin: 0 0 3rem;
+        font-family: var(--font-display);
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
       }
 
       a {
-        color: var(--ink);
-        font-style: italic;
-        font-size: 0.9rem;
-        opacity: 0.45;
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        color: var(--text-faint);
         text-decoration: none;
-        transition: opacity 0.2s;
+        letter-spacing: 0.08em;
+        transition: color 0.2s;
       }
 
       a:hover {
-        opacity: 0.9;
+        color: var(--text-muted);
       }
     </style>
   </head>
@@ -78,7 +79,7 @@
     <main>
       <h1>warrooms</h1>
       <p>right people, right context</p>
-      <a href="/">by omniping</a>
+      <a href="/">&larr; omniping</a>
     </main>
   </body>
 </html>

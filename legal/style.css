@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
 
 *,
 *::before,
@@ -9,12 +9,16 @@
 }
 
 :root {
-  --paper: #ece6d8;
-  --ink: #1b1714;
-  --ink-secondary: #3d3530;
-  --ink-muted: #7a7068;
-  --border: #d4cbbe;
-  --link: #3d3530;
+  --bg: #09090b;
+  --bg-card: #141414;
+  --border: #262626;
+  --text: #ededed;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+  --text-faint: #525252;
+  --accent: #818cf8;
+  --font-display: 'Space Mono', monospace;
+  --font-body: 'Space Grotesk', sans-serif;
   --max-width: 640px;
 }
 
@@ -24,10 +28,9 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
-  color: var(--ink);
-  background: var(--paper);
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  background: var(--bg);
   line-height: 1.65;
   padding: 0 1.25rem;
 }
@@ -38,19 +41,19 @@ nav {
   padding: 2rem 0 0;
   display: flex;
   gap: 1.5rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   align-items: center;
 }
 
 nav .home {
   margin-right: auto;
-  font-style: italic;
-  opacity: 0.5;
+  color: var(--text-faint);
 }
 
 nav a {
-  color: var(--ink-muted);
+  color: var(--text-muted);
   text-decoration: none;
   padding-bottom: 0.15rem;
   border-bottom: 1.5px solid transparent;
@@ -58,12 +61,12 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--ink);
+  color: var(--text);
 }
 
 nav a.active {
-  color: var(--ink);
-  border-bottom-color: var(--ink);
+  color: var(--text);
+  border-bottom-color: var(--accent);
 }
 
 main {
@@ -77,23 +80,23 @@ header {
 }
 
 h1 {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-size: 2.5rem;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
 }
 
 .meta {
   font-size: 0.82rem;
-  color: var(--ink-muted);
-  font-style: italic;
+  color: var(--text-muted);
 }
 
 .lede {
   font-size: 1rem;
-  color: var(--ink-secondary);
+  color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 2.5rem;
   padding-bottom: 2.5rem;
@@ -105,41 +108,42 @@ section {
 }
 
 h2 {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
   margin-bottom: 0.6rem;
+  color: var(--text);
 }
 
 h3 {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-size: 1.05rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
   font-weight: 400;
-  font-style: italic;
+  color: var(--text-muted);
   margin-top: 1.25rem;
   margin-bottom: 0.35rem;
 }
 
 p {
   margin-bottom: 0.75rem;
-  color: var(--ink-secondary);
+  color: var(--text-secondary);
 }
 
 a {
-  color: var(--link);
+  color: var(--accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   transition: color 0.15s;
 }
 
 a:hover {
-  color: var(--ink);
+  color: var(--text);
 }
 
 ul {
   margin: 0.5rem 0 1rem 1.25rem;
-  color: var(--ink-secondary);
+  color: var(--text-secondary);
 }
 
 li {
@@ -147,9 +151,13 @@ li {
   padding-left: 0.25rem;
 }
 
+li::marker {
+  color: var(--text-faint);
+}
+
 li strong {
-  color: var(--ink);
-  font-weight: 550;
+  color: var(--text);
+  font-weight: 600;
 }
 
 table {
@@ -161,19 +169,20 @@ table {
 
 th {
   text-align: left;
-  font-weight: 600;
-  font-size: 0.78rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--ink-muted);
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
   padding: 0.5rem 0.75rem;
-  border-bottom: 1.5px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 td {
   padding: 0.6rem 0.75rem;
   border-bottom: 1px solid var(--border);
-  color: var(--ink-secondary);
+  color: var(--text-secondary);
   vertical-align: top;
 }
 
@@ -186,8 +195,10 @@ footer {
   margin: 0 auto;
   padding: 2rem 0 3rem;
   border-top: 1px solid var(--border);
-  font-size: 0.8rem;
-  color: var(--ink-muted);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
 }
 
 @media (max-width: 480px) {
