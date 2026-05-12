@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>theway &mdash; wisdom on your lock screen</title>
-    <meta name="description" content="theway by omniping &mdash; wisdom on your lock screen" />
+    <meta name="description" content="theway by omniping &mdash; curate pools of wisdom and surface them passively through iOS widgets" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,10 +14,13 @@
     <style>
       :root {
         --bg: #09090b;
+        --bg-card: #141414;
+        --border: #262626;
         --text: #ededed;
         --text-muted: #737373;
         --text-faint: #525252;
         --accent: #34d399;
+        --accent-dim: #34d39920;
         --font-display: 'Space Mono', monospace;
         --font-body: 'Space Grotesk', sans-serif;
       }
@@ -32,54 +35,128 @@
         background: var(--bg);
         color: var(--text);
         font-family: var(--font-body);
-        display: grid;
-        place-items: center;
+        font-size: 1rem;
+        line-height: 1.5;
         min-height: 100vh;
         min-height: 100dvh;
-        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 2rem 5rem;
         -webkit-font-smoothing: antialiased;
       }
 
       main {
-        text-align: center;
+        width: 100%;
+        max-width: 600px;
       }
 
-      h1 {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: clamp(2.3rem, 10vw, 4.1875rem);
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        color: var(--accent);
-        margin-bottom: 0.75rem;
-      }
-
-      p {
-        font-family: var(--font-display);
-        font-size: 0.875rem;
-        color: var(--text-muted);
-        margin-bottom: 2.5rem;
-      }
-
-      a {
+      .back {
         font-family: var(--font-display);
         font-size: 0.75rem;
         color: var(--text-faint);
         text-decoration: none;
         letter-spacing: 0.08em;
         transition: color 0.2s;
+        display: inline-block;
+        margin-bottom: 2.5rem;
       }
 
-      a:hover {
+      .back:hover {
         color: var(--text-muted);
+      }
+
+      h1 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(2.3rem, 8vw, 3.125rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .tagline {
+        font-family: var(--font-display);
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+      }
+
+      .body p {
+        color: var(--text-muted);
+        margin-bottom: 1.25rem;
+        line-height: 1.65;
+      }
+
+      .body ul {
+        list-style: none;
+        margin: 1.5rem 0;
+        padding: 1.5rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .body ul li {
+        padding: 0.4rem 0;
+        color: var(--text);
+        font-size: 0.9375rem;
+      }
+
+      .body ul li::before {
+        content: "\2192  ";
+        color: var(--accent);
+        font-family: var(--font-display);
+      }
+
+      .quote {
+        font-size: 0.875rem;
+        color: var(--text-faint);
+        font-style: italic;
+        border-left: 2px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 2rem 1.5rem 3rem;
+        }
       }
     </style>
   </head>
   <body>
     <main>
+      <a class="back" href="/">&larr; omniping</a>
       <h1>theway</h1>
-      <p>wisdom on your lock screen</p>
-      <a href="/">&larr; omniping</a>
+      <p class="tagline">wisdom on your lock screen</p>
+
+      <div class="body">
+        <p>
+          Curate pools of wisdom &mdash; quotes, ideas, principles, anything worth
+          revisiting &mdash; and surface them passively through iOS widgets. The widget
+          is the product. Glance at your lock screen, absorb something good, move on.
+        </p>
+        <p>
+          No feed. No scroll. No notifications. Just the right words at the right time,
+          waiting on your lock screen when you look.
+        </p>
+
+        <ul>
+          <li>Lock screen, home screen, and StandBy widgets</li>
+          <li>Unlimited pools and items on every tier</li>
+          <li>Offline-first &mdash; works without an account</li>
+          <li>AI-powered content generation with Prism</li>
+          <li>Sync across devices with your account</li>
+          <li>Custom widget styles for premium users</li>
+        </ul>
+
+        <p class="quote">
+          &ldquo;The impediment to action advances action. What stands in the way becomes the way.&rdquo;
+          &mdash; Marcus Aurelius
+        </p>
+      </div>
     </main>
   </body>
 </html>

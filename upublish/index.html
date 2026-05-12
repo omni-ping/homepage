@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>upublish &mdash; publish with claude</title>
-    <meta name="description" content="upublish by omniping &mdash; publish with claude" />
+    <meta name="description" content="upublish by omniping &mdash; generate and publish sites from your terminal with Claude" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,10 +14,13 @@
     <style>
       :root {
         --bg: #09090b;
+        --bg-card: #141414;
+        --border: #262626;
         --text: #ededed;
         --text-muted: #737373;
         --text-faint: #525252;
         --accent: #f472b6;
+        --accent-dim: #f472b620;
         --font-display: 'Space Mono', monospace;
         --font-body: 'Space Grotesk', sans-serif;
       }
@@ -32,54 +35,131 @@
         background: var(--bg);
         color: var(--text);
         font-family: var(--font-body);
-        display: grid;
-        place-items: center;
+        font-size: 1rem;
+        line-height: 1.5;
         min-height: 100vh;
         min-height: 100dvh;
-        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 2rem 5rem;
         -webkit-font-smoothing: antialiased;
       }
 
       main {
-        text-align: center;
+        width: 100%;
+        max-width: 600px;
       }
 
-      h1 {
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: clamp(2.3rem, 10vw, 4.1875rem);
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        color: var(--accent);
-        margin-bottom: 0.75rem;
-      }
-
-      p {
-        font-family: var(--font-display);
-        font-size: 0.875rem;
-        color: var(--text-muted);
-        margin-bottom: 2.5rem;
-      }
-
-      a {
+      .back {
         font-family: var(--font-display);
         font-size: 0.75rem;
         color: var(--text-faint);
         text-decoration: none;
         letter-spacing: 0.08em;
         transition: color 0.2s;
+        display: inline-block;
+        margin-bottom: 2.5rem;
       }
 
-      a:hover {
+      .back:hover {
         color: var(--text-muted);
+      }
+
+      h1 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(2.3rem, 8vw, 3.125rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .tagline {
+        font-family: var(--font-display);
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+      }
+
+      .body p {
+        color: var(--text-muted);
+        margin-bottom: 1.25rem;
+        line-height: 1.65;
+      }
+
+      .body ul {
+        list-style: none;
+        margin: 1.5rem 0;
+        padding: 1.5rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      .body ul li {
+        padding: 0.4rem 0;
+        color: var(--text);
+        font-size: 0.9375rem;
+      }
+
+      .body ul li::before {
+        content: "\2192  ";
+        color: var(--accent);
+        font-family: var(--font-display);
+      }
+
+      .domain {
+        font-family: var(--font-display);
+        font-size: 0.875rem;
+        color: var(--text-faint);
+        border-left: 2px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 2rem;
+      }
+
+      .domain span {
+        color: var(--accent);
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 2rem 1.5rem 3rem;
+        }
       }
     </style>
   </head>
   <body>
     <main>
+      <a class="back" href="/">&larr; omniping</a>
       <h1>upublish</h1>
-      <p>publish with claude</p>
-      <a href="/">&larr; omniping</a>
+      <p class="tagline">publish with claude</p>
+
+      <div class="body">
+        <p>
+          Generate and publish sites straight from your terminal. Connect upublish
+          as an MCP server, describe what you want, and Claude builds and deploys it.
+          Your site is live in seconds at <strong>upubli.sh</strong>.
+        </p>
+        <p>
+          No drag-and-drop editors. No templates. Tell Claude what you need and it
+          writes, designs, and ships. Update the same way &mdash; just say what to change.
+        </p>
+
+        <ul>
+          <li>MCP integration &mdash; publish from Claude Code or any MCP client</li>
+          <li>AI-generated sites powered by Claude</li>
+          <li>Hosted on Cloudflare &mdash; fast everywhere</li>
+          <li>Visibility controls: public, unlisted, or passcode-protected</li>
+          <li>API keys for programmatic publishing</li>
+          <li>Custom slugs &mdash; your-site.upubli.sh</li>
+        </ul>
+
+        <p class="domain">
+          your sites live at <span>*.upubli.sh</span>
+        </p>
+      </div>
     </main>
   </body>
 </html>
