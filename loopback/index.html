@@ -110,6 +110,39 @@
         font-family: var(--font-display);
       }
 
+      .guest-mode {
+        margin-top: 2rem;
+        padding: 1.25rem 1.5rem;
+        background: var(--accent-dim);
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+      }
+
+      .guest-mode strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+      }
+
+      .guest-mode p {
+        color: var(--text-muted);
+        font-size: 0.9375rem;
+        margin-bottom: 0 !important;
+      }
+
+      .guest-mode a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .guest-mode a:hover {
+        text-decoration: underline;
+      }
+
       .soon {
         font-size: 0.875rem;
         color: var(--text-faint);
@@ -149,9 +182,13 @@
           <li>Google Calendar + Gmail: Prism knows what&rsquo;s on your plate</li>
           <li>Push notifications, timezone-aware scheduling</li>
           <li>Offline-first &mdash; works without signal</li>
-          <li>Guest mode &mdash; fully functional, no account required, nothing leaves your device</li>
           <li>Powered by Claude</li>
         </ul>
+
+        <div class="guest-mode">
+          <strong>No account required</strong>
+          <p>Guest mode is fully functional &mdash; your data stays on your device and nothing is sent to our servers or any third party. <a href="/legal/privacy#guest-mode">Learn more in our privacy policy &rarr;</a></p>
+        </div>
 
         <p class="soon">
           Coming soon: scheduled prompts. &ldquo;Every Monday, review my overdue threads.&rdquo;
